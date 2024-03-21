@@ -6,11 +6,13 @@
     <link rel="stylesheet" href="style/style.css">
     <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
     <title>Curisosidades de Tecnologia</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
+<body onresize="resize()">
     <header>
         <h1>Curiosidades de Tecnologia</h1>
         <p>Tudo aquilo que você sempre quis saber sobre o mundo Tech, em um único lugar</p>
+        <span id="burger" class="material-icons" onclick="showMenu()">menu</span>
         <nav>
             <a href="#" class="home" >Home</a>
             <a href="#" class="noticias">Notícias</a>
@@ -71,5 +73,22 @@
         </article>
         <footer>Site criado por <strong class="footer_strong">Gustavo Guanabara</strong> para o <strong class="footer_strong">CursoemVideo</strong>.</footer>
     </main>
+    <script>
+        function resize(){
+            if(window.innerWidth <= 600){
+                document.querySelector("nav").style.display = "none"
+            } else{
+                document.querySelector("nav").style.display = "block"
+            }
+        }
+
+        function showMenu(){
+            if(document.querySelector("nav").style.display == "none"){
+                document.querySelector("nav").style.display = "block"
+            } else{
+                document.querySelector("nav").style.display = "none"
+            }
+        }
+    </script>
 </body>
 </html>
